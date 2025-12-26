@@ -1,0 +1,62 @@
+﻿@model ShoppingCartApp.Models.ShoppingCart
+
+@{
+    ViewData["Title"] = "PurchaseDetails";
+}
+
+<h1 class="text-color-2 fw-bold">Purchase Details</h1>
+<div class="text-color-2">
+    <a asp-action="CartHistory" class="text-color-2">Back to Purchase History</a>
+</div>
+
+<div>
+    <hr />
+    <dl class="row text-color-0">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FinalisedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FinalisedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+        <dd class="col-sm-10">
+            $@Model.Total.ToString("0.00")
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h2 class="text-color-2 fw-bold">Cart Contents</h2>
+    <table class="table">
+        <thead>
+            <tr class="text-color-0">
+                <th>Product Name</th>
+                <th> Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CartItems)
+            {
+                <tr class="text-color-0">
+                    <td>@Html.DisplayFor(modelItem => item.Product.ProductName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                    <td>
+                        @{
+                            var lineTotal = item.Product.Price * item.Quantity;
+                        }
+                        $@lineTotal.ToString($"0.00")
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

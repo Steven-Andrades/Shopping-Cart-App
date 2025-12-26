@@ -1,0 +1,66 @@
+﻿@using ShoppingCartApp.Models.DTOs
+@model LoginDTO
+
+@{
+    ViewData["Title"] = "Login";
+    string loginMessage = ViewBag.LoginMessage ?? "";
+}
+
+<h1 class="text-color-2 fw-bold">Login</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            @{
+                if (string.IsNullOrWhiteSpace(loginMessage) == false)
+                {
+                    <label class="text-danger">@loginMessage</label>    
+                }
+            }
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-labe fs-3 mb-2 text-color-2"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Password" class="control-label fs-3 mb-2 text-color-2"></label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group text-center mt-4">
+                <div class="row align-items-end">
+                    <div class="col-6">
+                        <input type="submit" value="Login" class="btn background-color-2 text-color-2 w-75" />
+                    </div>
+                    <div class="col-6">
+						<div class="data-flex flex-column h-100">
+                            <div class="text-center mb-2">
+                                <h5 class="text-center text-color-2 mb-2 flex-shrink-0">Don't have an account?</h5>
+                                <h5 class="text-center text-color-2 mb-4 fw-bold flex-shrink-0">Sign Up!</h5>
+                            </div>
+                            <div class="text-center">
+								<a asp-action="Create" class="btn background-color-2 text-color-2 w-75">Create</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>             
+            </div>
+        </form>
+    </div>
+    <!--Logo-->
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="text-center">
+            <img src="/images/logo.svg"
+                 alt="Company Logo"
+                 class="animate-logo"
+                 style="max-height: 400px;"/>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

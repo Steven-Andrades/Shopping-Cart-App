@@ -1,0 +1,163 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.text-color-0{
+    color: var(--text-primary-0) !important;
+}
+.text-color-1 {
+    color: var(--text-primary-1) !important;
+}
+.text-color-2 {
+    color: var(--text-primary-2) !important;
+}
+.text-color-3 {
+    color: var(--text-primary-3) !important;
+}
+.text-color-4 {
+    color: var(--text-primary-4) !important;
+}
+
+.background-color-0 {
+    background-color: var(--color-primary-0) !important;
+}
+.background-color-1 {
+    background-color: var(--color-primary-1) !important;
+}
+.background-color-2 {
+    background-color: var(--color-primary-2) !important;
+}
+.background-color-3 {
+    background-color: var(--color-primary-3) !important;
+}
+.background-color-4 {
+    background-color: var(--color-primary-4) !important;
+}
+
+.border-color-0 {
+    border-color: var(--color-primary-0) !important;
+}
+
+.border-color-1 {
+    border-color: var(--color-primary-1) !important;
+}
+
+.border-color-2 {
+    border-color: var(--color-primary-2) !important;
+}
+
+.border-color-3 {
+    border-color: var(--color-primary-3) !important;
+}
+
+.border-color-4 {
+    border-color: var(--color-primary-4) !important;
+}
+
+.add-item-button {
+
+}
+
+.card-header-custom {
+    background-color: var(--color-primary-0);
+    border: 1px solid var(--color-primary-3);
+    border-bottom: 8px solid var(--color-primary-3);
+    border-radius: 10px 10px 10px 10px;
+}
+.card {
+    border: 3px solid var(--color-primary-0);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.navbar-nav .nav-link.dropdown-toggle.text-color-0 {
+    color: var(--text-primary-0);
+}
+
+/* Drop down on hover*/
+.navbar .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.narbar .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+/* Keep dropdown open when hovering over it */
+.navbar .dropdown-menu:hover {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+/* Carousel custom edits */
+#productCarousel {
+    border: 2px solid var(--color-primary-3);
+    border-radius: 10px;
+}
+
+#productCarousel .carousel-indicators {
+    margin-bottom: -8px;
+}
+
+#productCarousel .carousel-indicators button {
+    width: 50px;
+    height: 10px;
+    border-radius: 10%;
+    background-color: var(--color-primary-0);
+    margin: 0 5px;
+}
+
+#productCarousel .carousel-indicators .active {
+    background-color: var(--color-primary-4);
+}
+
+#productCarousel .carousel-control-prev,
+#productCarousel .carousel-control-next {
+    width: 40px;
+    height: 120px;
+    border: 3px solid var(--color-primary-4);
+    border-radius: 10%;
+    transform: translateY(50%);
+}
+
+#productCarousel .carousel-control-prev {
+    left: 10px;
+}
+
+#productCarousel .carousel-control-next {
+    right: 10px;
+}
+
+}

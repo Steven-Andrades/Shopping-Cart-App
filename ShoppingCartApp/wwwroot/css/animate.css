@@ -1,0 +1,28 @@
+﻿.animate-logo {
+    animation: bouncy-logo 2.4s cubic-bezier(0.5,0,1,0.5) infinite;
+    transform-origin: center bottom;
+    display: inline-block;
+}
+
+@keyframes bouncy-logo {
+    0%, 100% {
+        /* Keyframe on top position */
+        transform: translateY(0px) scaleY(1) scaleX(1);
+        animation-timing-function: cubic-bezier(0.5,0,1,0.5);
+    }
+    45% {
+        /* Keyframe before hitting ground */
+        transform: translateY(60px) scaleY(1.1) scaleX(0.9);
+        animation-timing-function: cubic-bezier(0,0.5,0.5,1);
+    }
+    50% {
+        /* Keyframe hits ground */
+        transform: translateY(60px) scaleY(0.8) scaleX(1.2);
+        animation-timing-function: cubic-bezier(0.5,0,1,0.5);
+    }
+    55% {
+        /* Keyframe bounce from ground */
+        transform: translateY(60px) scaleY(1.1) scaleX(0.9);
+        animation-timing-function: cubic-bezier(0,0.5,0.5,1);
+    }
+}

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ShoppingCartApp.Models.ShoppingCart>
+
+@{
+    ViewData["Title"] = "CartHistory";
+}
+
+<h1 class="text-color-2 fw-bold mb-4">Cart History</h1>
+<div class="card background-color-0 border-color-3">
+    <table class="table">
+        <thead>
+            <tr class="card-header background-color-1 text-color-0 rounded-bottom fs-3">
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FinalisedDate)
+                </th>
+                <th>
+                    Item List
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Total)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="text-color-2 fs-5">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FinalisedDate)
+                    </td>
+                    <td>
+                        <a asp-action="PurchaseDetails" class="btn background-color-2 text-color-2" asp-route-id="@item.Id">Details</a>
+                    </td>
+                    <td>
+                        @item.Total.ToString("C")
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

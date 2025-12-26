@@ -1,0 +1,13 @@
+﻿:root {
+    --color-primary-0: #8F9FC1;
+    --color-primary-1: #748BBD;
+    --color-primary-2: #145C9E;
+    --color-primary-3: #0B4F6C;
+    --color-primary-4: #11445A;
+    /*Text colours to constrast colour options*/
+    --text-primary-0: #11445A;
+    --text-primary-1: #0B4F6C;
+    --text-primary-2: #FFFFFF;
+    --text-primary-3: #748BBD;
+    --text-primary-4: #8F9FC1;
+}

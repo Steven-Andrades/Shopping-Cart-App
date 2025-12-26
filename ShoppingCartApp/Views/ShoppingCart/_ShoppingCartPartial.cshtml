@@ -1,0 +1,58 @@
+﻿@using ShoppingCartApp.Models
+@model ShoppingCart
+
+<div class="background-color-2">
+	<!--Makes a cntainer that stays anchored to the top of the parent container-->
+	<div class="sticky-top background-color-1">
+		<!--Headers and title that is styled speficially for an offcanvas modal-->
+		<div class="offcanvas-header border-bottom border-dark">
+			<h1 class="offcanvas-title fs-t fw-bold text-color-2" id="cartTitle">Your Cart</h1>
+			<!--Custom X button in the top right of the panel-->
+			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+
+		</div>
+
+		<div class="d-flex justify-content-start text-color-2 m-3">
+			<div>
+				<h4>Summary</h4>
+				<p id="cartTotal">$0.00 <strong>.inc GST</strong></p>
+			</div>
+		</div>
+	</div>
+	<!--Checkout and Cancel button functionality-->
+	@if (Model != null && Model.CartItems.Count > 0)
+	{
+		<div class="background-color-1">
+			<a id="btnCheckout" class="btn background-color-2 text-color-2 m-2" value="@Model.Id">Checkout</a>
+			<a id="btnCancel" class="btn background-color-2 text-color-2 m-2" value="@Model.Id">Cancel</a>
+		</div>
+	}
+	<!--Setup another container for our cart contents that is styled for an off canvas set-->
+	<div class="offcanvas-body background-color-1">
+		@if (Model != null && Model.CartItems.Count > 0)
+		{
+			<div class="container">
+				@foreach (var item in Model.CartItems)
+				{
+					<div class="card background-color-1 text-color-2 border-color-4 p-1 m-2">
+						<h4>@item.Product.ProductName</h4>
+						<div>
+							<form class="cart-qty-toggle d-flex justify-content-between align-conent-center m-2">
+								<input type="hidden" name="Id" value="@item.Id"/>
+								<button class="btn-minus btn btn-success mx-1"> - </button>
+								<p class="qty-text mx-1" name="Quantity">@item.Quantity</p>
+								<button class="btn-plus btn btn-success mx-1"> + </button>
+
+								@{
+									var lineTotal = item.Product.Price * item.Quantity;
+								}
+								<p class="line-total mx-2" value="@item.Product.Price">$@lineTotal.ToString("0.00")</p>
+							</form>
+							<button class="remove-button btn btn-danger mx-2" value="@item.Id">Remove</button>
+						</div>
+					</div>
+				}
+			</div>
+		}
+	</div>
+</div>
