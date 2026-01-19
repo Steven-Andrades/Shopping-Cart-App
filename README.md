@@ -30,6 +30,6 @@ and complete purchases with user authentication and track their order history.
 - Visual Studio 2022 with ASP.NET Core
 - SQL Server Express 2019
 - SQL Server Management Studio
-- Microsoft .NET Framework
+- Microsoft .NET SDK
 - Update App.config file to configure SQL Server connection details.
-Note: Run Entity Framework migration: "update-database" to seed data.
+- Note: Run Entity Framework migration: "update-database" to seed data.
